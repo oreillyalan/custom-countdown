@@ -54,7 +54,7 @@ function updateCountdown(e){
     countdownTitle = e.srcElement[0].value;
     countdownDate = e.srcElement[1].value;
     countdownValue = new Date(countdownDate).getTime();
-    updateDom();
+    countdownDate === "" ? alert('Please select a date for the countdown.'):updateDom();
 }
 
 function reset(){
