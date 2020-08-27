@@ -55,10 +55,16 @@ function updateCountdown(e){
     countdownDate = e.srcElement[1].value;
     countdownValue = new Date(countdownDate).getTime();
     updateDom();
+}
 
-        
-
+function reset(){
+    countdownEl.hidden = true;   
+    inputContainer.hidden = false;   
+    clearInterval(countdownActive);
+    countdownTitle = '';
+    countdownDate = '';
 }
 
 // Event Listeners
 countdownForm.addEventListener('submit',updateCountdown);
+countdownBtn.addEventListener('click',reset);
